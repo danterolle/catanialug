@@ -6,8 +6,8 @@
       <h1>{{ .Params.heroTitle | default "Il software libero ha una casa, a Catania." }}</h1>
       <p class="lead">{{ .Params.heroLead | default "Siamo un gruppo di appassionati, studenti e professionisti che promuove GNU/Linux, il software libero e la cultura open source in città e nel resto della Sicilia." }}</p>
       <div class="btn-row">
-        <a href="/iscrizione/" class="btn btn-primary">Diventa membro</a>
-        <a href="/eventi/" class="btn btn-outline">Scopri gli eventi</a>
+        <a href="{{ "/iscrizione/" | relURL }}" class="btn btn-primary">Diventa membro</a>
+        <a href="{{ "/eventi/" | relURL }}" class="btn btn-outline">Scopri gli eventi</a>
       </div>
     </div>
     <div class="terminal">
@@ -53,7 +53,7 @@
         <span class="tag">Dal 2001</span>
         <h2>Il Linux Day arriva anche a Catania</h2>
         <p>Il Linux Day è l'iniziativa nazionale, distribuita in decine di città lo stesso giorno, per conoscere da vicino GNU/Linux e il software libero: talk, workshop, postazioni di assistenza tecnica e dimostrazioni pratiche aperte a tutti.</p>
-        <a href="/eventi/" class="btn btn-outline">Vedi i nostri eventi →</a>
+        <a href="{{ "/eventi/" | relURL }}" class="btn btn-outline">Vedi i nostri eventi →</a>
       </div>
       <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
         <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-presentation" src="https://makertube.net/videos/embed/7y9xjei4PJnT4epcp4xXPe?title=0&amp;warningTitle=0&amp;peertubeLink=0" style="width:100%;aspect-ratio:16/9;display:block;" frameborder="0" allowfullscreen loading="lazy"></iframe>

@@ -2,7 +2,7 @@
 {{ $paginator := .Paginate (.Pages.ByParam "weight") 6 }}
 <div class="page-head">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> / Videogallery</div>
+    <div class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / Videogallery</div>
     <h1>Videogallery</h1>
   </div>
 </div>

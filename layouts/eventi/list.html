@@ -2,7 +2,7 @@
 {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 6 }}
 <div class="page-head">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> / Eventi</div>
+    <div class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / Eventi</div>
     <h1>Eventi</h1>
   </div>
 </div>
@@ -11,13 +11,13 @@
     <div class="grid grid-3">
       {{ range $paginator.Pages }}
       <div class="card">
-        {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+        {{ with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ end }}
         <div class="meta">Evento del {{ .Date.Format "02-01-2006" }} · pubblicato il {{ .Params.publish_date | default (.Date.Format "02-01-2006") }}</div>
         <h3>{{ .Title }}</h3>
         <p>{{ .Params.summary | default .Summary }}</p>
         <div class="btn-row">
           <a href="{{ .RelPermalink }}">Continua →</a>
-          {{ with .Params.locandina }}<a href="{{ . }}">Locandina</a>{{ end }}
+          {{ with .Params.locandina }}<a href="{{ . | relURL }}">Locandina</a>{{ end }}
         </div>
       </div>
       {{ end }}
