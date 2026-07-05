@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (.Pages.ByParam "weight") 6 }}
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / News</div>
+    <h1>News</h1>
+  </div>
+</div>
+<section class="section">
+  <div class="container" style="max-width:820px;">
+    {{ range $paginator.Pages }}
+    <details class="acc"{{ if and (eq .Weight 1) (eq $paginator.PageNumber 1) }} open{{ end }}>
+      <summary>{{ .Title }} <span class="date">{{ .Date.Format "02-01-2006" }}</span></summary>
+      <div class="acc-body">{{ .Content }}</div>
+    </details>
+    {{ end }}
+    {{ if gt $paginator.TotalPages 1 }}
+    {{ partial "pagination" $paginator }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

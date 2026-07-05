@@ -1,0 +1,7 @@
+{{ if gt .TotalPages 1 }}
+<nav class="pagination-nav">
+  {{ range .Pagers }}
+  <a href="{{ .URL }}" class="pagi-btn{{ if eq . $ }} active{{ end }}">{{ .PageNumber }}</a>
+  {{ end }}
+</nav>
+{{ end }}

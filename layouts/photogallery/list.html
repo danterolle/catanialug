@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{ $sorted := .Pages.ByParam "weight" }}{{ $paginator := .Paginate $sorted.Reverse 24 }}
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / Photogallery</div>
+    <h1>Photogallery</h1>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="figure-grid">
+      {{ range $paginator.Pages }}
+      <a href="{{ .Params.image }}" target="_blank"><img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy"></a>
+      {{ end }}
+    </div>
+    {{ if gt $paginator.TotalPages 1 }}
+    {{ partial "pagination" $paginator }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

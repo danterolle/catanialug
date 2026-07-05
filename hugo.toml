@@ -1,0 +1,107 @@
+baseURL = "https://www.catania.linux.it"
+locale = "it-IT"
+title = "GLUG Catania — GNU/Linux User Group Catania"
+paginate = 6
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Associazione GNU/Linux User Group Catania: software libero, open source ed eventi a Catania."
+  accent = "#A589DC"
+  accentStrong = "#461B6A"
+
+[menu]
+  [[menu.main]]
+    identifier = "associazione"
+    name = "Associazione"
+    url = "#"
+    weight = 1
+  [[menu.main]]
+    identifier = "chi-siamo"
+    name = "Chi siamo"
+    url = "/chi-siamo/"
+    parent = "associazione"
+    weight = 1
+  [[menu.main]]
+    identifier = "statuto"
+    name = "Statuto"
+    url = "/pdf/associazione/statuto.pdf"
+    parent = "associazione"
+    weight = 2
+  [[menu.main]]
+    identifier = "regolamento"
+    name = "Regolamento"
+    url = "/pdf/associazione/regolamento.pdf"
+    parent = "associazione"
+    weight = 3
+  [[menu.main]]
+    identifier = "iscrizione"
+    name = "Iscrizione"
+    url = "/iscrizione/"
+    parent = "associazione"
+    weight = 4
+  [[menu.main]]
+    identifier = "rinnovo"
+    name = "Rinnovo quota"
+    url = "/rinnovo/"
+    parent = "associazione"
+    weight = 5
+  [[menu.main]]
+    identifier = "collabora"
+    name = "Collabora con noi"
+    url = "/collabora/"
+    parent = "associazione"
+    weight = 6
+  [[menu.main]]
+    identifier = "mailing"
+    name = "Mailing list"
+    url = "/mailing-lists/"
+    parent = "associazione"
+    weight = 7
+  [[menu.main]]
+    identifier = "webmail"
+    name = "Webmail"
+    url = "https://mail.catania.linux.it"
+    parent = "associazione"
+    weight = 8
+  [[menu.main]]
+    identifier = "news"
+    name = "News"
+    url = "/news/"
+    weight = 2
+  [[menu.main]]
+    identifier = "eventi"
+    name = "Eventi"
+    url = "/eventi/"
+    weight = 3
+  [[menu.main]]
+    identifier = "documenti"
+    name = "Documenti"
+    url = "/documenti/"
+    weight = 4
+  [[menu.main]]
+    identifier = "gallery"
+    name = "Gallery"
+    url = "#"
+    weight = 5
+  [[menu.main]]
+    identifier = "photogallery"
+    name = "Photogallery"
+    url = "/photogallery/"
+    parent = "gallery"
+    weight = 1
+  [[menu.main]]
+    identifier = "videogallery"
+    name = "Videogallery"
+    url = "/videogallery/"
+    parent = "gallery"
+    weight = 2
+  [[menu.main]]
+    identifier = "contatti"
+    name = "Contatti"
+    url = "/contatti/"
+    weight = 6
+  [[menu.main]]
+    identifier = "links"
+    name = "Links"
+    url = "/links/"
+    weight = 7

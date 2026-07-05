@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / Rinnovo Quota Associativa</div>
+    <h1>Rinnovo Quota Associativa</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:start;gap:56px;">
+
+      <div>
+        <h2>Rinnovo quota associativa GNU/Linux User Group Catania</h2>
+        <ul style="color:var(--text-dim);line-height:2;">
+          <li><strong>Socio "Studente"</strong>: € 5,00 ogni biennio</li>
+          <li><strong>Socio "Ordinario"</strong>: € 10,00 ogni anno</li>
+        </ul>
+        <p>Per qualsiasi altra informazione consultare lo <a href="/pdf/associazione/statuto.pdf">statuto</a> oppure scrivere a <a href="mailto:info@catania.linux.it">info@catania.linux.it</a></p>
+      </div>
+
+      <div>
+        <h2>Seleziona la quota associativa</h2>
+        <form onsubmit="event.preventDefault();">
+          <label for="quota">Tipo di quota</label>
+          <select id="quota">
+            <option>Studente — € 5,00 (biennio)</option>
+            <option>Ordinario — € 10,00 (annuale)</option>
+          </select>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Procedi al pagamento</button>
+        </form>
+        <p style="margin-top:24px;font-size:.85rem;">Il pagamento verrà elaborato tramite PayPal. Non è necessario avere un account PayPal per effettuare il pagamento.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}

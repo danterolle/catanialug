@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (.Pages.ByParam "weight") 6 }}
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / Videogallery</div>
+    <h1>Videogallery</h1>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:24px;">
+      {{ range $paginator.Pages }}
+      <div style="aspect-ratio:16/9;">
+        <iframe width="100%" height="100%" src="{{ .Params.video }}" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups" frameborder="0" title="{{ .Title }}"></iframe>
+      </div>
+      {{ end }}
+    </div>
+    {{ if gt $paginator.TotalPages 1 }}
+    {{ partial "pagination" $paginator }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

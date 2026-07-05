@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / Documenti</div>
+    <h1>Documenti</h1>
+  </div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+      {{ range $paginator.Pages }}
+      <div class="card">
+        {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+        <div class="meta">{{ .Date.Format "02-01-2006" }} · {{ .Params.author }}</div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.summary }}</p>
+        {{ with .Params.download }}<a href="{{ . }}">Download →</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ if gt $paginator.TotalPages 1 }}
+    {{ partial "pagination" $paginator }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

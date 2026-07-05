@@ -1,0 +1,84 @@
+{{ define "main" }}
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / Iscrizione</div>
+    <h1>Iscrizione</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:start;gap:56px;">
+
+      <div>
+        <h2>Iscrizione al GNU/Linux User Group Catania</h2>
+        <p>L'iscrizione all'associazione GLUGCT implica il pagamento di una quota:</p>
+        <ul style="color:var(--text-dim);line-height:2;">
+          <li><strong>Socio "Studente"</strong>: € 5,00 ogni biennio</li>
+          <li><strong>Socio "Ordinario"</strong>: € 10,00 ogni anno</li>
+        </ul>
+        <p>Per qualsiasi altra informazione consultare lo <a href="/pdf/associazione/statuto.pdf">statuto</a> oppure scrivere a <a href="mailto:info@catania.linux.it">info@catania.linux.it</a></p>
+      </div>
+
+      <div>
+        <h2>Compila il modulo di iscrizione</h2>
+        <form onsubmit="event.preventDefault();">
+          <label for="tipo">Tipo socio</label>
+          <select id="tipo">
+            <option>Studente (€ 5 / biennio)</option>
+            <option>Ordinario (€ 10 / anno)</option>
+          </select>
+
+          <label for="cognome">Cognome</label>
+          <input id="cognome" type="text" placeholder="Rossi" required>
+
+          <label for="nome">Nome</label>
+          <input id="nome" type="text" placeholder="Mario" required>
+
+          <label for="nascita">Data di nascita</label>
+          <input id="nascita" type="text" placeholder="GG/MM/AAAA" required>
+
+          <label for="cf">Codice fiscale</label>
+          <input id="cf" type="text" placeholder="RSSMRA80A01C351A" required>
+
+          <label for="indirizzo">Indirizzo</label>
+          <input id="indirizzo" type="text" placeholder="Via Roma, 1" required>
+
+          <div class="grid grid-2" style="gap:12px;">
+            <div>
+              <label for="cap">CAP</label>
+              <input id="cap" type="text" placeholder="95100" required>
+            </div>
+            <div>
+              <label for="provincia">Provincia</label>
+              <input id="provincia" type="text" placeholder="CT" required>
+            </div>
+          </div>
+
+          <label for="citta">Città</label>
+          <input id="citta" type="text" placeholder="Catania" required>
+
+          <label for="telefono">Telefono</label>
+          <input id="telefono" type="text" placeholder="+39 333 1234567">
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="mario.rossi@email.it" required>
+
+          <div class="form-check">
+            <input id="privacy" type="checkbox" required>
+            <label for="privacy" style="margin:0;">Accetto la <a href="/privacy-policy/">privacy policy</a></label>
+          </div>
+
+          <div class="form-check">
+            <input id="mailing" type="checkbox">
+            <label for="mailing" style="margin:0;">Chiedo anche l'iscrizione alle mailing list <strong>Lug</strong> e <strong>Linux</strong></label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Iscriviti</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> / {{ .Title }}</div>
+    <h1>{{ .Title }}</h1>
+  </div>
+</div>
+<section class="section">
+  <div class="container" style="max-width:820px;">
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}
