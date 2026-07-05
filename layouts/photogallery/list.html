@@ -2,7 +2,7 @@
 {{ $sorted := .Pages.ByParam "weight" }}{{ $paginator := .Paginate $sorted.Reverse 24 }}
 <div class="page-head">
   <div class="container">
-    <div class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / Photogallery</div>
+    <div class="breadcrumb"><a href="{{ "" | absURL }}">Home</a> / Photogallery</div>
     <h1>Photogallery</h1>
   </div>
 </div>
@@ -10,7 +10,7 @@
   <div class="container">
     <div class="figure-grid">
       {{ range $paginator.Pages }}
-      <a href="{{ .Params.image | relURL }}" target="_blank"><img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy"></a>
+      <a href="{{ .Params.image | absURL }}" target="_blank"><img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy"></a>
       {{ end }}
     </div>
     {{ if gt $paginator.TotalPages 1 }}
