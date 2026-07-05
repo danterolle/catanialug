@@ -6,10 +6,10 @@
     <h1>News</h1>
   </div>
 </div>
-<section class="section">
+<section class="section reveal">
   <div class="container" style="max-width:820px;">
     {{ range $paginator.Pages }}
-    <details class="acc"{{ if and (eq .Weight 1) (eq $paginator.PageNumber 1) }} open{{ end }}>
+    <details class="acc reveal reveal-delay-1"{{ if and (eq .Weight 1) (eq $paginator.PageNumber 1) }} open{{ end }}>
       <summary>{{ .Title }} <span class="date">{{ .Date.Format "02-01-2006" }}</span></summary>
       <div class="acc-body">{{ .Content }}</div>
     </details>

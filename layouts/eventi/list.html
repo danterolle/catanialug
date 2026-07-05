@@ -6,11 +6,11 @@
     <h1>Eventi</h1>
   </div>
 </div>
-<section class="section">
+<section class="section reveal">
   <div class="container">
     <div class="grid grid-3">
       {{ range $paginator.Pages }}
-      <div class="card">
+      <div class="card reveal reveal-delay-1">
         {{ with .Params.image }}<img src="{{ (. | strings.TrimPrefix "/") | absURL }}" alt="{{ $.Title }}">{{ end }}
         <div class="meta">Evento del {{ .Date.Format "02-01-2006" }} · pubblicato il {{ .Params.publish_date | default (.Date.Format "02-01-2006") }}</div>
         <h3>{{ .Title }}</h3>

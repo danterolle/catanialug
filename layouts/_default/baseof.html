@@ -13,9 +13,6 @@
 {{ partial "header.html" . }}
 {{ block "main" . }}{{ end }}
 {{ partial "footer.html" . }}
-<script>
-document.querySelectorAll('.nav-drop').forEach(d=>{d.addEventListener('toggle',function(){if(this.open)document.querySelectorAll('.nav-drop').forEach(o=>{if(o!==this)o.open=false})})});
-document.querySelector('.hamburger')?.addEventListener('click',function(){document.querySelector('.site-nav').classList.toggle('nav-open')});
-</script>
+<script src="{{ "js/base.js" | absURL }}" defer></script>
 </body>
 </html>

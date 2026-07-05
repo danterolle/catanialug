@@ -5,7 +5,7 @@
     <h1>{{ .Title }}</h1>
   </div>
 </div>
-<section class="section">
+<section class="section reveal">
   <div class="container" style="max-width:820px;">
     {{ with .Params.image }}<img src="{{ (. | strings.TrimPrefix "/") | absURL }}" alt="{{ $.Title }}" style="border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:24px;">{{ end }}
     <div class="meta" style="margin-bottom:16px;">Evento del {{ .Date.Format "02-01-2006" }}</div>

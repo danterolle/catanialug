@@ -6,11 +6,11 @@
     <h1>Documenti</h1>
   </div>
 </div>
-<section class="section">
+<section class="section reveal">
   <div class="container">
     <div class="grid grid-3">
       {{ range $paginator.Pages }}
-      <div class="card">
+      <div class="card reveal reveal-delay-1">
         {{ with .Params.image }}<img src="{{ (. | strings.TrimPrefix "/") | absURL }}" alt="{{ $.Title }}">{{ end }}
         <div class="meta">{{ .Date.Format "02-01-2006" }} · {{ .Params.author }}</div>
         <h3>{{ .Title }}</h3>
