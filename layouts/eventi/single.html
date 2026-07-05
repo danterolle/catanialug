@@ -7,10 +7,10 @@
 </div>
 <section class="section">
   <div class="container" style="max-width:820px;">
-    {{ with .Params.image }}<img src="{{ . | absURL }}" alt="{{ $.Title }}" style="border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:24px;">{{ end }}
+    {{ with .Params.image }}<img src="{{ (. | strings.TrimPrefix "/") | absURL }}" alt="{{ $.Title }}" style="border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:24px;">{{ end }}
     <div class="meta" style="margin-bottom:16px;">Evento del {{ .Date.Format "02-01-2006" }}</div>
     {{ .Content }}
-    {{ with .Params.locandina }}<a href="{{ . | absURL }}" class="btn btn-outline" style="margin-top:16px;">Scarica locandina →</a>{{ end }}
+    {{ with .Params.locandina }}<a href="{{ (. | strings.TrimPrefix "/") | absURL }}" class="btn btn-outline" style="margin-top:16px;">Scarica locandina →</a>{{ end }}
   </div>
 </section>
 {{ end }}

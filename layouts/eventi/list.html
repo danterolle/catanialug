@@ -11,13 +11,13 @@
     <div class="grid grid-3">
       {{ range $paginator.Pages }}
       <div class="card">
-        {{ with .Params.image }}<img src="{{ . | absURL }}" alt="{{ $.Title }}">{{ end }}
+        {{ with .Params.image }}<img src="{{ (. | strings.TrimPrefix "/") | absURL }}" alt="{{ $.Title }}">{{ end }}
         <div class="meta">Evento del {{ .Date.Format "02-01-2006" }} · pubblicato il {{ .Params.publish_date | default (.Date.Format "02-01-2006") }}</div>
         <h3>{{ .Title }}</h3>
         <p>{{ .Params.summary | default .Summary }}</p>
         <div class="btn-row">
           <a href="{{ .RelPermalink }}">Continua →</a>
-          {{ with .Params.locandina }}<a href="{{ . | absURL }}">Locandina</a>{{ end }}
+          {{ with .Params.locandina }}<a href="{{ (. | strings.TrimPrefix "/") | absURL }}">Locandina</a>{{ end }}
         </div>
       </div>
       {{ end }}

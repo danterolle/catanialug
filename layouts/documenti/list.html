@@ -11,11 +11,11 @@
     <div class="grid grid-3">
       {{ range $paginator.Pages }}
       <div class="card">
-        {{ with .Params.image }}<img src="{{ . | absURL }}" alt="{{ $.Title }}">{{ end }}
+        {{ with .Params.image }}<img src="{{ (. | strings.TrimPrefix "/") | absURL }}" alt="{{ $.Title }}">{{ end }}
         <div class="meta">{{ .Date.Format "02-01-2006" }} · {{ .Params.author }}</div>
         <h3>{{ .Title }}</h3>
         <p>{{ .Params.summary }}</p>
-        {{ with .Params.download }}<a href="{{ . | absURL }}">Download →</a>{{ end }}
+        {{ with .Params.download }}<a href="{{ (. | strings.TrimPrefix "/") | absURL }}">Download →</a>{{ end }}
       </div>
       {{ end }}
     </div>
